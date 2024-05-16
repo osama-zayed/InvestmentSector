@@ -1,0 +1,648 @@
+@import url('https://fonts.googleapis.com/css2?family=Courgette&family=Montserrat:wght@500&family=Poppins&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    text-decoration: none;
+}
+:root {
+    --maincolor: #0196a7;
+    --subcolor: #18e4ff;
+    --background-color:#fcfcfc;
+  }
+/*--------------------------------------------------------------
+# General
+--------------------------------------------------------------*/
+body {
+    background-color: var();
+    direction: ltr;
+}
+
+/* ::-webkit-scrollbar {
+    width: 12px;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background-color: rgb(242, 242, 242);
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: var(--background-color);
+    border-radius: 10px;
+} */
+
+/*--------------------------------------------------------------
+#Loading screen
+--------------------------------------------------------------*/
+#loading-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #f5f5f5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+  }
+  .loader {
+    --dim: 3rem;
+    width: var(--dim);
+    height: var(--dim);
+    position: relative;
+    animation: spin988 2s linear infinite;
+  }
+  
+  .loader .circle {
+    --color: #333;
+    --dim: 1.2rem;
+    width: var(--dim);
+    height: var(--dim);
+    background-color: var(--color);
+    border-radius: 50%;
+    position: absolute;
+  }
+  
+  .loader .circle:nth-child(1) {
+    top: 0;
+    left: 0;
+  }
+  
+  .loader .circle:nth-child(2) {
+    top: 0;
+    right: 0;
+  }
+  
+  .loader .circle:nth-child(3) {
+    bottom: 0;
+    left: 0;
+  }
+  
+  .loader .circle:nth-child(4) {
+    bottom: 0;
+    right: 0;
+  }
+  
+  @keyframes spin988 {
+    0% {
+      transform: scale(1) rotate(0);
+    }
+  
+    20%, 25% {
+      transform: scale(1.3) rotate(90deg);
+    }
+  
+    45%, 50% {
+      transform: scale(1) rotate(180deg);
+    }
+  
+    70%, 75% {
+      transform: scale(1.3) rotate(270deg);
+    }
+  
+    95%, 100% {
+      transform: scale(1) rotate(360deg);
+    }
+  }
+/*--------------------------------------------------------------
+# Navigation Menu
+--------------------------------------------------------------*/
+.navbar {
+    box-shadow: 0px 0px 5px 0px rgb(160, 160, 160, 0.8);
+    transition: background-color 0.3s ease;
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+
+}
+
+.navbar.scrolled {
+    background-color: var(--maincolor);
+}
+
+
+.navbar img {
+    width: 55px;
+    height: 35px;
+}
+.navbar .navbar-nav  {
+display: flex;
+justify-content: start;
+align-items: center;
+
+}
+.navbar a {
+    text-decoration: none;
+    color: var(--background-color);
+    font-size: 14px;
+    font-weight: 600;
+    margin: 5px 7px;
+    padding: 7px 3px;
+}
+.navbar .dropdown-menu{
+    text-align: center;
+}
+.navbar .dropdown-menu a{
+    margin: 0;
+    padding: 5px;
+    color: var(--maincolor);
+
+}
+.navbar a:hover {
+    color: var(--subcolor);
+    transition: 0.3s ease;
+}
+
+/*--------------------------------------------------------------
+# Beranda
+--------------------------------------------------------------*/
+.beranda {
+    width: 100%;
+    height: 100vh;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-color: rgb(0 0 0 / 60%);
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: fadeInOut 30s infinite;
+}
+
+.beranda span {
+    color: #fff;
+    font-size: 40px;
+    text-transform: uppercase;
+    font-family: 'Montserrat', sans-serif;
+    text-align: center;
+    font-weight: 700;
+    max-width: 90%;
+    text-align: center;
+}
+@keyframes fadeInOut {
+    0%, 25% {
+      opacity: 1;
+      background-image: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.40)),url("../img/landing1.jpg");
+      
+    }
+    25% {
+      opacity: 1;
+      background-image: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.40)),url("../img/landing2.jpg");
+    }
+    50% {
+      opacity: 1;
+      background-image: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.40)),url("../img/landing3.jpg");
+    }
+    75% {
+      opacity: 1;
+      background-image: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.40)),url("../img/landing4.jpg");
+    }
+    100% {
+      opacity: 1;
+      background-image:linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.40)), url("../img/landing1.jpg");
+    }
+  }
+/*--------------------------------------------------------------
+# Tentang
+--------------------------------------------------------------*/
+.tentang {
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.tentang img {
+    width: 300px;
+    height: 200px;
+    animation-name: tentang;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+
+.area-tentang {
+    width: 500px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.judul {
+    font-size: 35px;
+    font-family: 'Courgette', cursive;
+    text-align: center;
+    font-weight: 600;
+    color: var(--maincolor);
+    margin: 10px 0px 15px;
+}
+
+
+.area-tentang p {
+    font-size: larger;
+    text-align: center;
+    color: #000;
+    font-family: 'Courgette', cursive;
+    line-height: 1.8;
+}
+
+@keyframes tentang {
+    0% {
+        transform: translate(0px, 0px);
+    }
+
+    50% {
+        transform: translate(0px, -20px);
+    }
+
+    100% {
+        transform: translate(0px, 0px);
+    }
+}
+
+/*--------------------------------------------------------------
+# visi
+--------------------------------------------------------------*/
+.area-visi {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap-reverse;
+    align-items: center;
+}
+
+.area-visi img {
+    width: 400px;
+    height: 550px;
+}
+
+.area-visi .main-carousel {
+    width: 400px;
+    height: 600px;
+}
+
+.visi-kiri {
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    margin: 20px 0px;
+}
+
+.box-visi {
+    width: 280px;
+    padding: 10px;
+    text-align: center;
+    margin: 10px;
+}
+
+.box-visi  {
+    
+font-size: xx-large;
+}
+
+.box-visi h1 {
+    color: var(--subcolor);
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.box-visi p {
+    color: var(--maincolor);
+    font-size: 13px;
+}
+
+/*--------------------------------------------------------------
+# Menu
+--------------------------------------------------------------*/
+.menu {
+    justify-content: center;
+    align-items: center;
+}
+
+.carousel,
+.main-carousel {
+    width: 90%;
+    min-height: 100%;
+    padding: 20px 0px;
+}
+
+.box-menu {
+    width: 500px;
+    margin: 0px 70px 0px 0px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.box-menu img {
+    width: 260px;
+    height: 260px;
+    border-radius: 10px;
+}
+
+.area-menu {
+    width: 200px;
+    margin: 0px 10px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.harga {
+    font-size: 20px;
+    margin: 10px 0px;
+    color: #dea402;
+}
+
+.area-menu .judul {
+    text-align: start;
+}
+
+.area-menu p {
+    font-size: 13px;
+    color: var(--maincolor);
+}
+
+/*--------------------------------------------------------------
+# Review
+--------------------------------------------------------------*/
+.area-review {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.box-review {
+    width: 280px;
+    height: 100%;
+    padding: 0px 20px 20px;
+    margin: 30px 10px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #fff;
+    box-shadow: 0px 0px 10px #c3c3c3;
+    text-align: center;
+}
+
+.box-review img {
+    width: 70px;
+    height: 70px;
+    transform: translateY(-25px);
+    position: absolute;
+}
+
+.box-review h1 {
+    font-size: 18px;
+    margin: 50px 0px 10px;
+}
+
+.box-review p {
+    font-family: 'Courgette', cursive;
+    line-height: 1.7;
+}
+
+/*--------------------------------------------------------------
+# Partner
+--------------------------------------------------------------*/
+.partner {
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.412);
+}
+
+.partner .carousel-cell img {
+    width: 140px;
+    height: 50px;
+    margin: 10px 30px;
+}
+
+/*--------------------------------------------------------------
+# Lokasi
+--------------------------------------------------------------*/
+.lokasi {
+    padding: 90px 0px 20px;
+    align-items: center;
+}
+
+#map {
+    width: 80%;
+    height: 350px;
+    margin: 20px 0px;
+}
+
+.area-kontak {
+    width: 500px;
+}
+
+/*--------------------------------------------------------------
+# Galery
+--------------------------------------------------------------*/
+.area-gallery {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.area-gallery img {
+    width: 280px;
+    height: 280px;
+    margin: 20px 30px;
+    transition: 0.5s ease-in-out;
+    cursor: pointer;
+}
+
+.area-gallery img:hover {
+    transform: scale(1.05);
+    transition: 0.5s ease-in-out;
+}
+
+/*--------------------------------------------------------------
+# Footer
+--------------------------------------------------------------*/
+.footer {
+    width: 100%;
+    height: 100%;
+    padding: 50px 20px;
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    background-color: rgba(255, 255, 255, 0.412);
+    color: #000000;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.footer-1 .footer-logo {
+    display: flex;
+    align-items: center;
+}
+
+.footer-logo img {
+    width: 60px;
+    height: 60px;
+    margin-right: 10px;
+}
+
+.footer-logo h1 {
+    font-size: 20px;
+}
+
+.footer-1 p {
+    font-size: 13px;
+    font-family: 'Montserrat', sans-serif;
+    margin-bottom: 20px;
+    color: #000;
+}
+
+.sosial-media img {
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
+}
+
+.footer-1,
+.footer-2,
+.footer-3,
+.footer-4 {
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
+}
+
+.footer-2 h1,
+.footer-3 h1,
+.footer-4 h1 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.footer-2 a,
+.footer-4 a {
+    color: #000;
+    margin-bottom: 5px;
+}
+
+.footer-4 a:hover {
+    color: var(--subcolor);
+}
+
+.footer-3 p {
+    font-size: 15px;
+    color: #000;
+    margin-bottom: 5px;
+}
+
+footer {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.625);
+}
+
+footer h1 {
+    text-align: center;
+    line-height: 50px;
+    color: rgb(0, 0, 0);
+    font-size: 1rem;
+}
+
+footer h1 a {
+    color: #000000;
+    display: inline-block;
+}
+
+footer h1 a:hover {
+    color: var(--subcolor);
+}
+
+@media screen and (max-width:768px) {
+    .nav {
+        justify-content: space-between;
+        padding: 0px 30px;
+        background-color: var(--maincolor);
+    }
+    .nav img{
+       visibility: visible;
+    }
+
+    .nav a {
+        display: none;
+    }
+
+    #btn-nav {
+        display: block;
+    }
+
+    .box-menu {
+        flex-direction: column;
+        margin: 10px;
+        width: 280px;
+    }
+
+    .area-menu {
+        width: 260px;
+        height: 220px;
+    }
+
+    .footer {
+        flex-direction: column;
+    }
+
+    .area-visi .main-carousel {
+        width: 300px;
+    }
+
+    .area-visi img {
+        width: 300px;
+    }
+
+    .visi-kiri {
+        width: 300px;
+    }
+
+    .box-visi img {
+        width: 60px;
+        height: 60px;
+    }
+}
+
+@media screen and (max-width:600px) {
+    .navbar{
+        background-color: var(--maincolor);
+    }
+    .navbar li {
+        padding-top: 20px;
+    }
+
+    .beranda span {
+        font-size: 30px;
+    }
+
+    .tentang img {
+        width: 300px;
+        height: 260px;
+    }
+
+    .area-tentang {
+        width: 300px;
+    }
+
+    .main-carousel {
+        width: 95%;
+    }
+
+    .main-carousel .carousel-cell img {
+        margin: 10px;
+    }
+}
